@@ -1,0 +1,7 @@
+{
+    "require": {
+        "eclipxe/cfdiutils": "^2.31",
+        "robrichards/xmlseclibs": "^3.1",
+        "tecnickcom/tcpdf": "^6.8"
+    }
+}

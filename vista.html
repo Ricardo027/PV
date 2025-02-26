@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Captura de Ventas</title>
+    <style>
+        table {
+            width: 60%;
+            margin: 20px auto;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align: center;">Lista de Ventas</h1>
+
+    <form action="Model.php" method="POST" id="formularioVenta">
+        <label for="nombreCliente">Nombre del Cliente:</label>
+        <input type="text" id="nombreCliente" name="nombreCliente" required>
+
+        <label for="rfcCliente">RFC del Cliente:</label>
+        <input type="text" id="rfcCliente" name="rfc" required>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                </tr>
+            </thead>
+            <tbody id="lista-ventas">
+                <tr>
+                    <td>Producto 1</td>
+                    <td><input type="hidden" name="precio[]" value="10">10</td>
+                    <td><input type="number" name="cantidad[]" value="1" min="1" required></td>
+                </tr>
+                <tr>
+                    <td>Producto 2</td>
+                    <td><input type="hidden" name="precio[]" value="20">20</td>
+                    <td><input type="number" name="cantidad[]" value="1" min="1" required></td>
+                </tr>
+                <tr>
+                    <td>Producto 3</td>
+                    <td><input type="hidden" name="precio[]" value="15">15</td>
+                    <td><input type="number" name="cantidad[]" value="1" min="1" required></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <input type="hidden" name="productos[]" value="Producto 1">
+        <input type="hidden" name="productos[]" value="Producto 2">
+        <input type="hidden" name="productos[]" value="Producto 3">
+
+        <button type="submit">Facturar</button>
+    </form>
+</body>
+</html>
